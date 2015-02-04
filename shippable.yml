@@ -4,14 +4,14 @@ rvm:
 
 env:
   global:
-    - APP_NAME=fierce-plains-1014
+    - APP_NAME=rails-pg-shippable
     - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
-    - secure: MRuHkLbL9HPkJPU5lzkKM1+NOq1S5RrhxEyhJkk60xxYiF7DMzydiBN8oFBjWrSmyGeGRuEC22a0I5ItobdWVszfcJCaXHwtfKzfGOUdKuyCnDgvojXhv/jrBvULyLK6zsLw3b8NMxdnwNsHqSPm19qW/EIGEl9Zv/637Igos69z9aT7+xrEG013+6HtKYb8RHm+iPSNsFoBi/RSAHYuM1eLTZWG2WAkjgzZaYmrHCgNwVmk+HOGR+TOWN7Iu5lrjyvC1XDCQrOvo1hZI30cd9OqJ5aadFm3exQpNhI4I7AgOnCbK3NoWNc/GAnqKXCvsaIQ80Jd/uLIOVyMjD6Xmg==
+    - secure: irDv64pZtC6SWT71xs8XYUBAIGbJjRq+IcVK4h375f/25BP2gh1RQDhuAg7oobMTb06RH5WjQRYZFq+jMqyAwT9WUDITM2LHD8+p539+l2COwCCgH3hhLEgo6kyBW9oS2A62rNeYfWAXX42R1J2nDbcS16nlZ0qKle0BsMH9dPahonyOAI7plzdtG4bX804Uj5YOX+UE3BCI+4GMkwmYixgyCxJZ9oq4RT8vAjQ5nbIp7SRqcsLCS9/C+ZD9CiZQTFzhr3wbBzIXTeeYjNYI7jl3r8vYz/r64UTOILzCH2NfWSI7e+5toXOTyTs/6ocrfz3aKG6oEPbbA0uLm9LHVQ==
 
 before_install:
   - which heroku || wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
-before_script: 
+before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - psql -c 'create database "sample-rubyonrails-postgres-heroku_test";' -U postgres
